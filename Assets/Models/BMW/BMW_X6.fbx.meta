@@ -1,0 +1,1131 @@
+fileFormatVersion: 2
+guid: eca651ecf293b1a4d98b18f809902280
+timeCreated: 1512407900
+licenseType: Pro
+ModelImporter:
+  serializedVersion: 22
+  fileIDToRecycleName:
+    100000: //RootNode
+    100002: bonnet
+    100004: boot_ok
+    100006: bump_front
+    100008: bump_rear_ok
+    100010: chassis
+    100012: door_lf_Ok_alcantara
+    100014: door_lf_Ok_black5
+    100016: door_lf_Ok_black6
+    100018: door_lf_Ok_body
+    100020: door_lf_Ok_carbon
+    100022: door_lf_Ok_interior
+    100024: door_lf_Ok_interior_front
+    100026: door_lf_Ok_metal
+    100028: door_lf_Ok_mirror
+    100030: door_lf_Ok_mirrormount
+    100032: door_lf_Ok_pivot
+    100034: door_lf_Ok_plasticdash
+    100036: door_lf_Ok_window
+    100038: door_lr_ok_pivot
+    100040: door_rf_ok_alcantara
+    100042: door_rf_ok_black7
+    100044: door_rf_ok_black8
+    100046: door_rf_ok_body
+    100048: door_rf_ok_carbon
+    100050: door_rf_ok_grill
+    100052: door_rf_ok_interior
+    100054: door_rf_ok_metal
+    100056: door_rf_ok_mirror
+    100058: door_rf_Ok_pivot
+    100060: door_rf_ok_plasticdash
+    100062: door_rf_ok_window
+    100064: door_rr_ok
+    100066: engine
+    100068: extra1
+    100070: glass_headlight
+    100072: Headlight
+    100074: interior_alcantara
+    100076: interior_Apillar_l
+    100078: interior_Apillar_r
+    100080: interior_black
+    100082: interior_carbon
+    100084: interior_chrome
+    100086: interior_cloth
+    100088: interior_glass
+    100090: interior_headrest_lf
+    100092: interior_IC_fuelmeter
+    100094: interior_IC_revmeter
+    100096: interior_IC_speedometer
+    100098: interior_leather
+    100100: interior_lod
+    100102: interior_lod_Apillar_l
+    100104: interior_lod_Apillar_r
+    100106: interior_lod_dash_l
+    100108: interior_lod_dash_r
+    100110: interior_metal
+    100112: interior_metal_L01
+    100114: interior_metal_L02
+    100116: interior_metal_R01
+    100118: interior_metal_R02
+    100120: interior_pivot
+    100122: interior_plasticdash
+    100124: interior_plasticdash_L01
+    100126: interior_plasticdash_L02
+    100128: interior_plasticdash_R01
+    100130: interior_plasticdash_R02
+    100132: interior_rearmirror
+    100134: interior_vehiclelights
+    100136: interior_xdrive
+    100138: Lamp
+    100140: light_glass
+    100142: navigation
+    100144: steering_wheel
+    100146: steering_wheel_anchor
+    100148: tire_FL
+    100150: tire_FL_center
+    100152: tire_FR
+    100154: tire_FR_center
+    100156: tire_RL
+    100158: tire_RL_center
+    100160: tire_RR
+    100162: tire_RR_center
+    100164: winds
+    100166: windscreen
+    400000: //RootNode
+    400002: bonnet
+    400004: boot_ok
+    400006: bump_front
+    400008: bump_rear_ok
+    400010: chassis
+    400012: door_lf_Ok_alcantara
+    400014: door_lf_Ok_black5
+    400016: door_lf_Ok_black6
+    400018: door_lf_Ok_body
+    400020: door_lf_Ok_carbon
+    400022: door_lf_Ok_interior
+    400024: door_lf_Ok_interior_front
+    400026: door_lf_Ok_metal
+    400028: door_lf_Ok_mirror
+    400030: door_lf_Ok_mirrormount
+    400032: door_lf_Ok_pivot
+    400034: door_lf_Ok_plasticdash
+    400036: door_lf_Ok_window
+    400038: door_lr_ok_pivot
+    400040: door_rf_ok_alcantara
+    400042: door_rf_ok_black7
+    400044: door_rf_ok_black8
+    400046: door_rf_ok_body
+    400048: door_rf_ok_carbon
+    400050: door_rf_ok_grill
+    400052: door_rf_ok_interior
+    400054: door_rf_ok_metal
+    400056: door_rf_ok_mirror
+    400058: door_rf_Ok_pivot
+    400060: door_rf_ok_plasticdash
+    400062: door_rf_ok_window
+    400064: door_rr_ok
+    400066: engine
+    400068: extra1
+    400070: glass_headlight
+    400072: Headlight
+    400074: interior_alcantara
+    400076: interior_Apillar_l
+    400078: interior_Apillar_r
+    400080: interior_black
+    400082: interior_carbon
+    400084: interior_chrome
+    400086: interior_cloth
+    400088: interior_glass
+    400090: interior_headrest_lf
+    400092: interior_IC_fuelmeter
+    400094: interior_IC_revmeter
+    400096: interior_IC_speedometer
+    400098: interior_leather
+    400100: interior_lod
+    400102: interior_lod_Apillar_l
+    400104: interior_lod_Apillar_r
+    400106: interior_lod_dash_l
+    400108: interior_lod_dash_r
+    400110: interior_metal
+    400112: interior_metal_L01
+    400114: interior_metal_L02
+    400116: interior_metal_R01
+    400118: interior_metal_R02
+    400120: interior_pivot
+    400122: interior_plasticdash
+    400124: interior_plasticdash_L01
+    400126: interior_plasticdash_L02
+    400128: interior_plasticdash_R01
+    400130: interior_plasticdash_R02
+    400132: interior_rearmirror
+    400134: interior_vehiclelights
+    400136: interior_xdrive
+    400138: Lamp
+    400140: light_glass
+    400142: navigation
+    400144: steering_wheel
+    400146: steering_wheel_anchor
+    400148: tire_FL
+    400150: tire_FL_center
+    400152: tire_FR
+    400154: tire_FR_center
+    400156: tire_RL
+    400158: tire_RL_center
+    400160: tire_RR
+    400162: tire_RR_center
+    400164: winds
+    400166: windscreen
+    2300000: bonnet
+    2300002: boot_ok
+    2300004: bump_front
+    2300006: bump_rear_ok
+    2300008: chassis
+    2300010: door_lf_Ok_alcantara
+    2300012: door_lf_Ok_black5
+    2300014: door_lf_Ok_black6
+    2300016: door_lf_Ok_body
+    2300018: door_lf_Ok_carbon
+    2300020: door_lf_Ok_interior
+    2300022: door_lf_Ok_interior_front
+    2300024: door_lf_Ok_metal
+    2300026: door_lf_Ok_mirror
+    2300028: door_lf_Ok_mirrormount
+    2300030: door_lf_Ok_plasticdash
+    2300032: door_lf_Ok_window
+    2300034: door_lr_ok_pivot
+    2300036: door_rf_ok_alcantara
+    2300038: door_rf_ok_black7
+    2300040: door_rf_ok_black8
+    2300042: door_rf_ok_body
+    2300044: door_rf_ok_carbon
+    2300046: door_rf_ok_grill
+    2300048: door_rf_ok_interior
+    2300050: door_rf_ok_metal
+    2300052: door_rf_ok_mirror
+    2300054: door_rf_ok_plasticdash
+    2300056: door_rf_ok_window
+    2300058: door_rr_ok
+    2300060: engine
+    2300062: extra1
+    2300064: glass_headlight
+    2300066: Headlight
+    2300068: interior_alcantara
+    2300070: interior_Apillar_l
+    2300072: interior_Apillar_r
+    2300074: interior_black
+    2300076: interior_carbon
+    2300078: interior_chrome
+    2300080: interior_cloth
+    2300082: interior_glass
+    2300084: interior_headrest_lf
+    2300086: interior_IC_fuelmeter
+    2300088: interior_IC_revmeter
+    2300090: interior_IC_speedometer
+    2300092: interior_leather
+    2300094: interior_lod
+    2300096: interior_lod_Apillar_l
+    2300098: interior_lod_Apillar_r
+    2300100: interior_lod_dash_l
+    2300102: interior_lod_dash_r
+    2300104: interior_metal
+    2300106: interior_metal_L01
+    2300108: interior_metal_L02
+    2300110: interior_metal_R01
+    2300112: interior_metal_R02
+    2300114: interior_plasticdash
+    2300116: interior_plasticdash_L01
+    2300118: interior_plasticdash_L02
+    2300120: interior_plasticdash_R01
+    2300122: interior_plasticdash_R02
+    2300124: interior_rearmirror
+    2300126: interior_vehiclelights
+    2300128: interior_xdrive
+    2300130: light_glass
+    2300132: navigation
+    2300134: steering_wheel
+    2300136: tire_FL
+    2300138: tire_FR
+    2300140: tire_RL
+    2300142: tire_RR
+    2300144: winds
+    2300146: windscreen
+    3300000: bonnet
+    3300002: boot_ok
+    3300004: bump_front
+    3300006: bump_rear_ok
+    3300008: chassis
+    3300010: door_lf_Ok_alcantara
+    3300012: door_lf_Ok_black5
+    3300014: door_lf_Ok_black6
+    3300016: door_lf_Ok_body
+    3300018: door_lf_Ok_carbon
+    3300020: door_lf_Ok_interior
+    3300022: door_lf_Ok_interior_front
+    3300024: door_lf_Ok_metal
+    3300026: door_lf_Ok_mirror
+    3300028: door_lf_Ok_mirrormount
+    3300030: door_lf_Ok_plasticdash
+    3300032: door_lf_Ok_window
+    3300034: door_lr_ok_pivot
+    3300036: door_rf_ok_alcantara
+    3300038: door_rf_ok_black7
+    3300040: door_rf_ok_black8
+    3300042: door_rf_ok_body
+    3300044: door_rf_ok_carbon
+    3300046: door_rf_ok_grill
+    3300048: door_rf_ok_interior
+    3300050: door_rf_ok_metal
+    3300052: door_rf_ok_mirror
+    3300054: door_rf_ok_plasticdash
+    3300056: door_rf_ok_window
+    3300058: door_rr_ok
+    3300060: engine
+    3300062: extra1
+    3300064: glass_headlight
+    3300066: Headlight
+    3300068: interior_alcantara
+    3300070: interior_Apillar_l
+    3300072: interior_Apillar_r
+    3300074: interior_black
+    3300076: interior_carbon
+    3300078: interior_chrome
+    3300080: interior_cloth
+    3300082: interior_glass
+    3300084: interior_headrest_lf
+    3300086: interior_IC_fuelmeter
+    3300088: interior_IC_revmeter
+    3300090: interior_IC_speedometer
+    3300092: interior_leather
+    3300094: interior_lod
+    3300096: interior_lod_Apillar_l
+    3300098: interior_lod_Apillar_r
+    3300100: interior_lod_dash_l
+    3300102: interior_lod_dash_r
+    3300104: interior_metal
+    3300106: interior_metal_L01
+    3300108: interior_metal_L02
+    3300110: interior_metal_R01
+    3300112: interior_metal_R02
+    3300114: interior_plasticdash
+    3300116: interior_plasticdash_L01
+    3300118: interior_plasticdash_L02
+    3300120: interior_plasticdash_R01
+    3300122: interior_plasticdash_R02
+    3300124: interior_rearmirror
+    3300126: interior_vehiclelights
+    3300128: interior_xdrive
+    3300130: light_glass
+    3300132: navigation
+    3300134: steering_wheel
+    3300136: tire_FL
+    3300138: tire_FR
+    3300140: tire_RL
+    3300142: tire_RR
+    3300144: winds
+    3300146: windscreen
+    4300000: door_rf_ok_mirror
+    4300002: door_rf_ok_alcantara
+    4300004: door_rf_ok_metal
+    4300006: door_rf_ok_carbon
+    4300008: door_rf_ok_interior
+    4300010: door_rf_ok_plasticdash
+    4300012: door_rf_ok_grill
+    4300014: door_rf_ok_black8
+    4300016: door_rf_ok_body
+    4300018: door_rf_ok_black7
+    4300020: door_rf_ok_window
+    4300022: interior_metal_R02
+    4300024: interior_metal_R01
+    4300026: interior_metal_L02
+    4300028: interior_metal_L01
+    4300030: interior_lod_dash_r
+    4300032: interior_lod_dash_l
+    4300034: interior_plasticdash_R02
+    4300036: interior_plasticdash_R01
+    4300038: interior_plasticdash_L02
+    4300040: interior_plasticdash_L01
+    4300042: interior_IC_speedometer
+    4300044: interior_IC_fuelmeter
+    4300046: interior_IC_revmeter
+    4300048: interior_lod_Apillar_r
+    4300050: interior_lod_Apillar_l
+    4300052: interior_Apillar_r
+    4300054: interior_Apillar_l
+    4300056: interior_headrest_lf
+    4300058: interior_xdrive
+    4300060: interior_vehiclelights
+    4300062: interior_alcantara
+    4300064: interior_metal
+    4300066: interior_leather
+    4300068: interior_cloth
+    4300070: interior_carbon
+    4300072: interior_lod
+    4300074: interior_plasticdash
+    4300076: interior_chrome
+    4300078: interior_black
+    4300080: interior_rearmirror
+    4300082: door_lf_Ok_interior_front
+    4300084: door_lf_Ok_mirror
+    4300086: door_lf_Ok_alcantara
+    4300088: door_lf_Ok_metal
+    4300090: door_lf_Ok_carbon
+    4300092: door_lf_Ok_interior
+    4300094: door_lf_Ok_plasticdash
+    4300096: door_lf_Ok_mirrormount
+    4300098: door_lf_Ok_black6
+    4300100: door_lf_Ok_body
+    4300102: door_lf_Ok_black5
+    4300104: door_lf_Ok_window
+    4300106: tire_FR
+    4300108: tire_RR
+    4300110: tire_FL
+    4300112: tire_RL
+    4300114: steering_wheel
+    4300116: navigation
+    4300118: windscreen
+    4300120: winds
+    4300122: light_glass
+    4300124: interior_glass
+    4300126: glass_headlight
+    4300128: extra1
+    4300130: engine
+    4300132: door_rr_ok
+    4300134: door_lr_ok_pivot
+    4300136: chassis
+    4300138: bump_rear_ok
+    4300140: bump_front
+    4300142: bonnet
+    4300144: boot_ok
+    4300146: Headlight
+    10800000: Lamp
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material__1209
+    second: {fileID: 2100000, guid: b14ae269a9ff2054aaf410129f00daac, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material__1218
+    second: {fileID: 2100000, guid: 8cb7c0c25248a114e8403a0a68e610b5, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material__1219
+    second: {fileID: 2100000, guid: 99dcf1bd8eb3ad24a858032a673f4887, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material__1220
+    second: {fileID: 2100000, guid: 56c42a3e088fa55428287021925fdf31, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material__1221
+    second: {fileID: 2100000, guid: 565f4d50ac71c6e4eb7d84eb3ee0b66c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material__1222
+    second: {fileID: 2100000, guid: 27ada4659409c4142aaef2ad9dc553f0, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material__1224
+    second: {fileID: 2100000, guid: 0906c490269cbea4492c7abddc33ff31, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material__1225
+    second: {fileID: 2100000, guid: a4cf851f3e9e5d742b654e95a11ed9f1, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material__225
+    second: {fileID: 2100000, guid: 76edadcc7715dab4886225ee99799d3b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material__241
+    second: {fileID: 2100000, guid: 5c5a807e6eb83f24ea069f068c962237, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: alcantara
+    second: {fileID: 2100000, guid: 603de5e1b8f5a2743bfccf4f99092a8b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: alcantara0
+    second: {fileID: 2100000, guid: 603de5e1b8f5a2743bfccf4f99092a8b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: alcantara1
+    second: {fileID: 2100000, guid: 603de5e1b8f5a2743bfccf4f99092a8b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: alcantara2
+    second: {fileID: 2100000, guid: 603de5e1b8f5a2743bfccf4f99092a8b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: back
+    second: {fileID: 2100000, guid: 8eee693fd4b93e94eae20dcbe25610f3, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: black
+    second: {fileID: 2100000, guid: 592c8e02566957b48824d429be0066cc, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: black0
+    second: {fileID: 2100000, guid: 8d5ef843d3079a6449ee9de07a58d80c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: black1
+    second: {fileID: 2100000, guid: b4c04ee2930fd9b44a07a8fee5892d61, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: black10
+    second: {fileID: 2100000, guid: 8d5ef843d3079a6449ee9de07a58d80c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: black11
+    second: {fileID: 2100000, guid: e36dab433c977ac42a082b9c0ecc1333, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: black12
+    second: {fileID: 2100000, guid: 8d5ef843d3079a6449ee9de07a58d80c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: black13
+    second: {fileID: 2100000, guid: 12355cb84d749d24a8ebca35408497e8, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: black14
+    second: {fileID: 2100000, guid: 8d5ef843d3079a6449ee9de07a58d80c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: black15
+    second: {fileID: 2100000, guid: ffc2b37b0b3c5b0469a4f76045fe54e5, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: black16
+    second: {fileID: 2100000, guid: 8d5ef843d3079a6449ee9de07a58d80c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: black17
+    second: {fileID: 2100000, guid: 68ad199d8a3afc54e8872518d059ee31, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: black18
+    second: {fileID: 2100000, guid: 8d5ef843d3079a6449ee9de07a58d80c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: black2
+    second: {fileID: 2100000, guid: 8bd0bd24aef62c34e85dd75c9f627386, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: black3
+    second: {fileID: 2100000, guid: 8d5ef843d3079a6449ee9de07a58d80c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: black4
+    second: {fileID: 2100000, guid: 8d5ef843d3079a6449ee9de07a58d80c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: black5
+    second: {fileID: 2100000, guid: 4bb54b54418b9694a9f940559a2618fb, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: black6
+    second: {fileID: 2100000, guid: 8d5ef843d3079a6449ee9de07a58d80c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: black7
+    second: {fileID: 2100000, guid: dec30bb1db090cb40bfecdd77275235b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: black8
+    second: {fileID: 2100000, guid: 8d5ef843d3079a6449ee9de07a58d80c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: black9
+    second: {fileID: 2100000, guid: ccf719307d01bb945b3a7dc63b14fa4f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: body_paint
+    second: {fileID: 2100000, guid: f0cdb6c04c260674f9c74f0587ca5ca7, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: body_paint0
+    second: {fileID: 2100000, guid: 63db2597acd59dc478c68b7ff5d1f41b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: body_paint1
+    second: {fileID: 2100000, guid: e5de6fb80b6d54248b68080c5849db4a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: body_paint2
+    second: {fileID: 2100000, guid: 95ecca0715a17154cb7f45d6c1d37b38, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: body_paint3
+    second: {fileID: 2100000, guid: 7a1c3d2e453983a4295a262f8a1157f6, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: body_paint4
+    second: {fileID: 2100000, guid: 7c91db9b7a386ac429b3c3d25cb63f8b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: body_paint5
+    second: {fileID: 2100000, guid: 7983e3bf4f2c3444b9395ffda649f4fa, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: body_paint6
+    second: {fileID: 2100000, guid: 7802ff043072e3745b65eaf9cce3a2ba, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: body_paint7
+    second: {fileID: 2100000, guid: 9e7f92804321cdb41b99330f142e91ef, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: body_paint8
+    second: {fileID: 2100000, guid: ba663f60bd6d02e41abdbc9bb9d1ef3b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: bumper_frame
+    second: {fileID: 2100000, guid: 64e2ff42d41da0147894693c21de67bf, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: carbon_fibre
+    second: {fileID: 2100000, guid: 1f0d12ebb6856bf4282a45dc0f6b05d3, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: carbon_fibre0
+    second: {fileID: 2100000, guid: 1f0d12ebb6856bf4282a45dc0f6b05d3, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: carbon_fibre1
+    second: {fileID: 2100000, guid: 1f0d12ebb6856bf4282a45dc0f6b05d3, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: carbon_fibre2
+    second: {fileID: 2100000, guid: 1f0d12ebb6856bf4282a45dc0f6b05d3, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: carbon_fibre3
+    second: {fileID: 2100000, guid: 1f0d12ebb6856bf4282a45dc0f6b05d3, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: carpet
+    second: {fileID: 2100000, guid: cac959d257732a14d8f0cf2671ddbe8a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: cd2
+    second: {fileID: 2100000, guid: bbc950f58b00b3d459082201ced484f6, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: chrome
+    second: {fileID: 2100000, guid: 4d471443dc0042e42a8db52ba2de5dea, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: chrome0
+    second: {fileID: 2100000, guid: 1c1b4b3009c73044d9193f6e17219d11, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: chrome1
+    second: {fileID: 2100000, guid: 0796cd4da118c4444b1c2a7d8c502048, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: chrome2
+    second: {fileID: 2100000, guid: 2a97792cd59d67949968cf8ffc719e9a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: chrome3
+    second: {fileID: 2100000, guid: 08e69b3eab6594b41891bf690cec39b0, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: cloth02_darkgrey
+    second: {fileID: 2100000, guid: 4e09c1727aa4f104b9ac1f5a8f757b37, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: cloth02_darkgrey0
+    second: {fileID: 2100000, guid: 4e09c1727aa4f104b9ac1f5a8f757b37, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: decals
+    second: {fileID: 2100000, guid: 8d5ef843d3079a6449ee9de07a58d80c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: decals0
+    second: {fileID: 2100000, guid: 8d5ef843d3079a6449ee9de07a58d80c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: decals1
+    second: {fileID: 2100000, guid: 8d5ef843d3079a6449ee9de07a58d80c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: decals2
+    second: {fileID: 2100000, guid: 8d5ef843d3079a6449ee9de07a58d80c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: glass
+    second: {fileID: 2100000, guid: 53b7d36a5f1b6674f82689d8714c97c0, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: glass0
+    second: {fileID: 2100000, guid: 7c19f7855d565af4fb41fd91c03b4d20, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: glass1
+    second: {fileID: 2100000, guid: 1ad95290853b8604393539cf1a00c574, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: glass2
+    second: {fileID: 2100000, guid: 15aa2b89ed140924a92dac699101786b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: grill
+    second: {fileID: 2100000, guid: 2b5852b771351384a86274b5397d8de7, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: grill0
+    second: {fileID: 2100000, guid: 7aae30374780f9f4eb4301f0e134ad98, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: grill1
+    second: {fileID: 2100000, guid: b2d813027b298ba4f8592f1132ff2400, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: grill2
+    second: {fileID: 2100000, guid: c481c79c49a0eaf46b3841a04ba77447, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: grill3
+    second: {fileID: 2100000, guid: 3b4cd7aee42c3ba46a66ad07bc7051e7, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: grill4
+    second: {fileID: 2100000, guid: 4efa3c4277ca95d4bbac74d526af0db4, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: grill5
+    second: {fileID: 2100000, guid: c6535d1715d57ab41aff95de1bc8595f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: grill6
+    second: {fileID: 2100000, guid: 42a93e8ec730912409df0b65570267c8, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: interior
+    second: {fileID: 2100000, guid: 928a3439a0c6101499f96b1e69d286e1, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: interior0
+    second: {fileID: 2100000, guid: 928a3439a0c6101499f96b1e69d286e1, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: interior1
+    second: {fileID: 2100000, guid: 928a3439a0c6101499f96b1e69d286e1, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: interior2
+    second: {fileID: 2100000, guid: 928a3439a0c6101499f96b1e69d286e1, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: interior3
+    second: {fileID: 2100000, guid: 928a3439a0c6101499f96b1e69d286e1, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: leather02
+    second: {fileID: 2100000, guid: 5b00dcb958533194caa921d598861933, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: leather020
+    second: {fileID: 2100000, guid: 5b00dcb958533194caa921d598861933, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: leather021
+    second: {fileID: 2100000, guid: 5b00dcb958533194caa921d598861933, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: lights
+    second: {fileID: 2100000, guid: 0b7e1a569393feb40838964238b7c1fe, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: lights0
+    second: {fileID: 2100000, guid: 0b7e1a569393feb40838964238b7c1fe, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: lights1
+    second: {fileID: 2100000, guid: 0b7e1a569393feb40838964238b7c1fe, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: lights10
+    second: {fileID: 2100000, guid: 0b7e1a569393feb40838964238b7c1fe, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: lights11
+    second: {fileID: 2100000, guid: 0b7e1a569393feb40838964238b7c1fe, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: lights12
+    second: {fileID: 2100000, guid: 0b7e1a569393feb40838964238b7c1fe, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: lights13
+    second: {fileID: 2100000, guid: 0b7e1a569393feb40838964238b7c1fe, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: lights2
+    second: {fileID: 2100000, guid: 0b7e1a569393feb40838964238b7c1fe, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: lights3
+    second: {fileID: 2100000, guid: 0b7e1a569393feb40838964238b7c1fe, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: lights4
+    second: {fileID: 2100000, guid: 0b7e1a569393feb40838964238b7c1fe, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: logo
+    second: {fileID: 2100000, guid: ada90855f5757f8449ed4f613bd3f1ca, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: metal
+    second: {fileID: 2100000, guid: a5f50b5b350382a4a9dc816502bb9cf5, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: metal0
+    second: {fileID: 2100000, guid: 978a244302375e541a19954422243897, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: metal1
+    second: {fileID: 2100000, guid: e3d27b47b57ccd54b9ab072ed183c6ea, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: metal2
+    second: {fileID: 2100000, guid: 02228c9f40760ff42b541130949e1a09, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: metal3
+    second: {fileID: 2100000, guid: affaf7fd6d171804d811d4964e416589, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: mirror
+    second: {fileID: 2100000, guid: 941917d9ad99ed04c9066124bd9b708a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: mirror0
+    second: {fileID: 2100000, guid: 8b9a47bf756173f49a3b0e6fd9198f9f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: navigation
+    second: {fileID: 2100000, guid: bf7f750b1a104944bb065d04e6aa98fa, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: plastic
+    second: {fileID: 2100000, guid: b2f89639f72f8ba488242a5f10db74fd, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: plastic1
+    second: {fileID: 2100000, guid: a1032d21fd3c8754a988219b4589d531, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: plastic2
+    second: {fileID: 2100000, guid: e6ec77fa0a8269349b73a8a331777d65, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: plastic3
+    second: {fileID: 2100000, guid: 1a59e13ad97f0674591738f68fe8e863, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: plastic4
+    second: {fileID: 2100000, guid: ed25fa0664e57f543a7c194ef2663e8d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: plastic5
+    second: {fileID: 2100000, guid: 405c70f503b701049afd8d1146e0a2b7, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: plastic50
+    second: {fileID: 2100000, guid: 6b5b57e1f094f154cb86b0f548a1f0a5, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: plastic_dash
+    second: {fileID: 2100000, guid: 1a88eea086a2e4a4084281bcfea1cd19, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: plastic_dash0
+    second: {fileID: 2100000, guid: 1a88eea086a2e4a4084281bcfea1cd19, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: plastic_dash1
+    second: {fileID: 2100000, guid: 1a88eea086a2e4a4084281bcfea1cd19, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: plastic_dash2
+    second: {fileID: 2100000, guid: 1a88eea086a2e4a4084281bcfea1cd19, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: plastic_dash3
+    second: {fileID: 2100000, guid: 1a88eea086a2e4a4084281bcfea1cd19, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: plastic_dash4
+    second: {fileID: 2100000, guid: 1a88eea086a2e4a4084281bcfea1cd19, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: plate
+    second: {fileID: 2100000, guid: 58b82fceab61ddb4e971ac729590b286, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: plate0
+    second: {fileID: 2100000, guid: 977884193aa2e1b43afc8cdda97d7dd6, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: underbody
+    second: {fileID: 2100000, guid: b0e19fce696e56a45b4107c9e0867ce4, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: undercarriage
+    second: {fileID: 2100000, guid: 32f2ca524118c43439037f352ead7d39, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: undercarriage0
+    second: {fileID: 2100000, guid: 32f2ca524118c43439037f352ead7d39, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: undercarriage1
+    second: {fileID: 2100000, guid: 32f2ca524118c43439037f352ead7d39, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: vehiclelights
+    second: {fileID: 2100000, guid: ef0f7503163ce294aab6de3038dfa4b9, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: vehiclelights0
+    second: {fileID: 2100000, guid: ef0f7503163ce294aab6de3038dfa4b9, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: windscreen
+    second: {fileID: 2100000, guid: 0ac9d8e5f5cfde540984438eaeca6640, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: windscreen0
+    second: {fileID: 2100000, guid: 067e485927767d04b98f5cb3c599fe2f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: windscreen1
+    second: {fileID: 2100000, guid: 668f2b0c699ce774c8fc8d1f25daf871, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: windscreen2
+    second: {fileID: 2100000, guid: 4dc998db3cc9f914a9534f9e41734d4f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: windscreen3
+    second: {fileID: 2100000, guid: 0cdf22c283c6e964b8a73971a0658632, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: windscreen4
+    second: {fileID: 2100000, guid: 9d1b2d280c1ad344cac212080b057688, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: xdrive
+    second: {fileID: 2100000, guid: de61c2ba0d96a5b4b8479afc12c75b3a, type: 2}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 0
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
