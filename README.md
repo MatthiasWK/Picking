@@ -3,7 +3,7 @@
 # Controls for "Desktop Mode" (Mouse and Keyboard)
 
 tab                 - switch picking method  
-left shift          - switch selection method (where available)/leave circle selection  
+left shift          - switch selection method (where available) / leave circle selection / reset sticky ray selection
 right mouse button  - select object  
 middle mouse button - alt select  
 scroll wheel        - change volume size  
