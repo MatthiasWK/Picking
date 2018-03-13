@@ -6,7 +6,7 @@ public class LeverController : InteractiveBehaviour
 {
     private Animator anim;
     private string leverName;
-    private int pos = 0;
+    public int pos;
 
     private void Awake()
     {
@@ -20,6 +20,8 @@ public class LeverController : InteractiveBehaviour
     // Increase lever position
     protected override void OnSelect()
     {
+        CheckIfClone();
+
         if (pos == 0)
         {
             anim.Play("Lever_0-1");
@@ -37,6 +39,8 @@ public class LeverController : InteractiveBehaviour
     // Decrease lever position
     protected override void OnAltSelect()
     {
+        CheckIfClone();
+
         if (pos == 1)
         {
             anim.Play("Lever_1-0");
@@ -48,6 +52,15 @@ public class LeverController : InteractiveBehaviour
             anim.Play("Lever_0-2");
             pos = 2;
             print(leverName + " set to " + pos);
+        }
+    }
+
+    // if clone, use pos of original
+    private void CheckIfClone()
+    {
+        if (original != null)
+        {
+            pos = original.GetComponent<LeverController>().pos;
         }
     }
 }

@@ -4,21 +4,22 @@ using UnityEngine;
 using cakeslice;
 
 
-public class Hybrid_RaySelector : MonoBehaviour
+public class MagnifyRaySelector : MonoBehaviour
 {
     
     private OutlineReset resetScript;
     private GameObject target = null;
-    private GameObject[] clones;
+    private GameObject clone = null;
+
+    public GameObject container;
 
     private void Start()
     {
-        resetScript = transform.parent.parent.GetComponent<OutlineReset>();       
+        resetScript = transform.parent.GetComponent<OutlineReset>();
     }
 
     private void OnEnable()
     {
-        clones = GameObject.FindGameObjectsWithTag("Clone");
         transform.Find("RayVisual").gameObject.SetActive(true);
     }
 
@@ -28,14 +29,12 @@ public class Hybrid_RaySelector : MonoBehaviour
 
         // Debug Raycast
         Vector3 forward = transform.TransformDirection(Vector3.forward) * 50;
-        //Debug.DrawRay(transform.position, forward, Color.green);
 
         RaycastHit hit = new RaycastHit(); ;
         Ray myRay = new Ray(transform.position, forward);
         if (Physics.Raycast(myRay, out hit))
         {
-            //print(hit);
-            if (hit.collider.gameObject.CompareTag("Clone")) // Check if object is a Clone of an Interactable
+            if (hit.collider.gameObject.CompareTag("Interactive")) // Check if object is Interactable
             {
                 if (target != hit.collider.gameObject) // Check if already touching hit object
                 {
@@ -46,6 +45,10 @@ public class Hybrid_RaySelector : MonoBehaviour
 
                     target = hit.collider.gameObject; // Make hit object my target
                     target.GetComponent<InteractiveBehaviour>().Contact(true); // Activate outline
+                    //if (clone == null)
+                    //{
+                        CloneTarget();
+                    //}
                 }
             }
             else if (target != null) // If touching something else, reset previous target
@@ -58,40 +61,66 @@ public class Hybrid_RaySelector : MonoBehaviour
         {
             target.GetComponent<InteractiveBehaviour>().Contact(false);
             target = null;
+            //print("blub");
+            //Destroy(clone);
+        }
+
+        if(target == null && clone != null)
+        {
+            Destroy(clone);
         }
 
         // If target is selected, execute its Select function
         if (Input.GetMouseButtonDown(1) && target != null)
         {
             target.GetComponent<InteractiveBehaviour>().Select();
+            SelectClone(false);
         }
 
         // Execute target's alternate Select function
         if (Input.GetMouseButtonDown(2) && target != null)
         {
             target.gameObject.GetComponent<InteractiveBehaviour>().AltSelect();
-        }
-
-        // Go back to Volume Selector on Shift or clicking when not touching anything
-        if (Input.GetKeyDown(KeyCode.LeftShift) || (Input.GetMouseButtonDown(1) || Input.GetMouseButtonDown(2)) && target == null)
-        {
-            transform.GetComponentInParent<MeshRenderer>().enabled = true;
-            transform.GetComponentInParent<Collider>().enabled = true;
-            DestroyClones();
-            gameObject.SetActive(false);
+            SelectClone(true);
         }
 
     }
 
-    // Destroy all clones
-    private void DestroyClones()
+    private void CloneTarget()
     {
-        foreach(GameObject clone in clones)
+        Vector3 clonePos = new Vector3(0, 0, 0);
+        Quaternion cloneRot = new Quaternion();
+
+        clone = Instantiate(target.transform.parent.gameObject, container.transform);
+        clone.transform.localPosition = clonePos;
+        clone.transform.rotation = cloneRot;
+
+        foreach (Transform child in clone.transform)
         {
-            if (clone != null)
+            if (child.tag == "Interactive")
             {
-                Destroy(clone.transform.parent.gameObject);
-            }           
+                child.tag = "Clone";
+                child.GetComponent<InteractiveBehaviour>().original = target;
+                child.GetComponent<InteractiveBehaviour>().Contact(false);
+            }
+        }
+    }
+
+    private void SelectClone(bool alt)
+    {
+        foreach (Transform child in clone.transform)
+        {
+            if (child.tag == "Clone")
+            {
+                if (alt)
+                {
+                    child.GetComponent<InteractiveBehaviour>().AltSelect();
+                }
+                else
+                {
+                    child.GetComponent<InteractiveBehaviour>().Select();
+                }
+            }
         }
     }
 
@@ -104,8 +133,7 @@ public class Hybrid_RaySelector : MonoBehaviour
             resetScript.Reset();
         }
 
-        DestroyClones();
-
         target = null;
+        Destroy(clone);
     }
 }
