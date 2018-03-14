@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using cakeslice;
-
+using MMK.Inp;
 
 public class RaySelector_Click : MonoBehaviour
 {
@@ -63,9 +63,9 @@ public class RaySelector_Click : MonoBehaviour
             target.GetComponent<InteractiveBehaviour>().Contact(false);
             target = null;
         }
-
+       
         // If target is selected, execute its Select function
-        if (Input.GetMouseButtonDown(1) && target != null)
+        if (MMKClusterInputManager.GetButtonDown("Btn_Secondary") && target != null)
         {
             target.GetComponent<InteractiveBehaviour>().Select();
         }

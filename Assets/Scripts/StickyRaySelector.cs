@@ -97,6 +97,10 @@ public class StickyRaySelector : MonoBehaviour
         }
 
         target = null;
-        stickyRay.enabled = false;
+        if (stickyRay != null)
+        {
+            stickyRay.enabled = false;
+        }
+        
     }
 }

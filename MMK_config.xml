@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<MMKConfig xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <ApplicationName>Picking</ApplicationName>
+	<UserID>0</UserID>
+    <CaveStartPosition><x>0</x><y>0</y><z>0</z></CaveStartPosition>
+    <QualityLevel>Good</QualityLevel>
+    <EyeDistance>0.06</EyeDistance>
+    <DebugLevel>0</DebugLevel>
+    <EnableClusterInput>true</EnableClusterInput>
+    <EnableMMKLogger>false</EnableMMKLogger>
+    <MVRInputs>
+        <!-- Example Trackers -->
+        <MiddleVRInput>
+            <Name>HeadTracker</Name>
+            <Type>Tracker</Type>
+            <MVRName>TrackerSimulatorKeyboard0.Tracker</MVRName>
+            <MVRIndex>0</MVRIndex>
+        </MiddleVRInput>
+        <!-- Example Axis -->
+        <!-- Example Buttons-->
+        <MiddleVRInput>
+            <Name>Btn_Primary</Name>
+            <Type>Button</Type>
+            <MVRName>Mouse</MVRName>
+            <MVRIndex>0</MVRIndex>
+        </MiddleVRInput>
+        <MiddleVRInput>
+            <Name>Btn_Secondary</Name>
+            <Type>Button</Type>
+            <MVRName>Mouse</MVRName>
+            <MVRIndex>1</MVRIndex>
+        </MiddleVRInput>
+	</MVRInputs>
+</MMKConfig>
