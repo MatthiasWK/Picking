@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using MMK.Inp;
 
 public class RaySelector_OnRelease : MonoBehaviour
 {
@@ -23,7 +24,7 @@ public class RaySelector_OnRelease : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetMouseButton(1) || Input.GetMouseButton(2))
+        if (MMKClusterInputManager.GetButton("Btn_Select") || MMKClusterInputManager.GetButton("Btn_AltSelect"))
         {
             transform.Find("RayVisual").gameObject.SetActive(true);
             // Debug Raycast
@@ -62,7 +63,7 @@ public class RaySelector_OnRelease : MonoBehaviour
 
         }
         // Execute target's Select function on release
-        if (Input.GetMouseButtonUp(1))
+        if (MMKClusterInputManager.GetButtonUp("Btn_Select"))
         {
             transform.Find("RayVisual").gameObject.SetActive(false);
             if (target != null)
@@ -74,7 +75,7 @@ public class RaySelector_OnRelease : MonoBehaviour
         }
 
         // Execute target's alternate Select function on release
-        if (Input.GetMouseButtonUp(2))
+        if (MMKClusterInputManager.GetButtonUp("Btn_AltSelect"))
         {
             transform.Find("RayVisual").gameObject.SetActive(false);
             if (target != null)

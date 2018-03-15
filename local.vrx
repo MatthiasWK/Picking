@@ -3,7 +3,11 @@
 	<Kernel LogLevel="2" LogInSimulationFolder="0" EnableCrashHandler="0" Version="1.7.0.7" />
 	<DeviceManager>
 		<Driver Type="vrDriverDirectInput" />
-		<Wand Name="PrimaryWand" Driver="0" Axis="Mouse.Axis" HorizontalAxis="0" HorizontalAxisScale="5" VerticalAxis="1" VerticalAxisScale="-5" AxisDeadZone="0" Buttons="Keyboard.Keys" Button0="2" Button1="3" Button2="4" Button3="5" Button4="6" Button5="7" />
+		<Driver Type="vrDriverVRPN">
+			<Buttons Address="Mouse0@localhost" ChannelIndex="0" ChannelsNb="3" Name="VRPNMouse" />
+			<Buttons Address="Keyboard0@localhost" ChannelIndex="0" ChannelsNb="164" Name="VRPNKeyboard" />
+		</Driver>
+		<Wand Name="PrimaryWand" Driver="0" Axis="Mouse.Axis" HorizontalAxis="0" HorizontalAxisScale="5" VerticalAxis="1" VerticalAxisScale="-5" AxisDeadZone="0" Buttons="Mouse.Buttons" Button0="1" Button1="3" Button2="4" Button3="5" Button4="6" Button5="7" />
 	</DeviceManager>
 	<DisplayManager Fullscreen="0" AlwaysOnTop="1" WindowBorders="0" ShowMouseCursor="1" VSync="0" GraphicsRenderer="2" AntiAliasing="0" ForceHideTaskbar="0" SaveRenderTarget="0" ChangeWorldScale="0" WorldScale="1">
 		<Node3D Name="VRSystemCenterNode" Tag="VRSystemCenter" Parent="None" Tracker="0" IsFiltered="0" Filter="0" PositionLocal="0.000000,0.000000,0.000000" OrientationLocal="0.000000,0.000000,0.000000,1.000000" />

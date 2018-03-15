@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Text.RegularExpressions;
 using UnityEngine;
 using UnityEngine.UI;
+using MMK.Inp;
 
 public class MethodSwitcher : MonoBehaviour {
 
@@ -40,12 +41,12 @@ public class MethodSwitcher : MonoBehaviour {
     // Switching
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Tab))
+        if (MMKClusterInputManager.GetButtonDown("Btn_SwitchMethod"))
         {
             SwitchActive();
         }
 
-        if (Input.GetKeyDown(KeyCode.LeftShift) && sMethods.Length > 1)
+        if (MMKClusterInputManager.GetButtonDown("Btn_SwitchSelect") && sMethods.Length > 1)
         {
             SwitchActiveSelection();
         }

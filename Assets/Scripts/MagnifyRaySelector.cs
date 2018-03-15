@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using cakeslice;
+using MMK.Inp;
 
 
 public class MagnifyRaySelector : MonoBehaviour
@@ -71,14 +71,14 @@ public class MagnifyRaySelector : MonoBehaviour
         }
 
         // If target is selected, execute its Select function
-        if (Input.GetMouseButtonDown(1) && target != null)
+        if (MMKClusterInputManager.GetButtonDown("Btn_Select") && target != null)
         {
             target.GetComponent<InteractiveBehaviour>().Select();
             SelectClone(false);
         }
 
         // Execute target's alternate Select function
-        if (Input.GetMouseButtonDown(2) && target != null)
+        if (MMKClusterInputManager.GetButtonDown("Btn_AltSelect") && target != null)
         {
             target.gameObject.GetComponent<InteractiveBehaviour>().AltSelect();
             SelectClone(true);

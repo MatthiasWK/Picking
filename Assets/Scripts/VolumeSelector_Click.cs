@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using MMK.Inp;
 
 public class VolumeSelector_Click : MonoBehaviour {
     private int numTouching;
@@ -28,12 +29,7 @@ public class VolumeSelector_Click : MonoBehaviour {
 
         numTouching = 0;
     }
-    //private void Update()
-    //{
-    //    transform.rotation = Quaternion.Lerp(transform.rotation, hand.transform.rotation, Time.deltaTime * 100);
-    //    transform.position = Vector3.Lerp(transform.position, hand.transform.position, Time.deltaTime * 100) + offset;
-    //}
-    // Increase number of touching objects on enter
+
     private void OnTriggerEnter(Collider other)
     {       
          if (other.gameObject.CompareTag("Interactive") && enabled)
@@ -51,17 +47,6 @@ public class VolumeSelector_Click : MonoBehaviour {
             other.gameObject.GetComponent<InteractiveBehaviour>().Contact(true, numTouching.Equals(1));
         }
 
-        //// If touching only one object, execute its Select function
-        //if (Input.GetMouseButtonDown(1) && numTouching.Equals(1))
-        //{
-        //    other.gameObject.GetComponent<InteractiveBehaviour>().Select();
-        //}
-
-        //// Execute object's alternate Select function
-        //if (Input.GetMouseButtonDown(2) && numTouching.Equals(1))
-        //{
-        //    other.gameObject.GetComponent<InteractiveBehaviour>().AltSelect();
-        //}
     }
 
     // Reset objects on exit
@@ -78,25 +63,25 @@ public class VolumeSelector_Click : MonoBehaviour {
     private void Update()
     {
         // If touching only one object, execute its Select function
-        if (Input.GetMouseButtonDown(1) && numTouching.Equals(1))
+        if (MMKClusterInputManager.GetButtonDown("Btn_Select") && numTouching.Equals(1))
         {
             touching[0].gameObject.GetComponent<InteractiveBehaviour>().Select();
         }
 
         // Execute object's alternate Select function
-        if (Input.GetMouseButtonDown(2) && numTouching.Equals(1))
+        if (MMKClusterInputManager.GetButtonDown("Btn_AltSelect") && numTouching.Equals(1))
         {
             touching[0].gameObject.GetComponent<InteractiveBehaviour>().AltSelect();
         }
 
         // Control size with mouse wheel if Volume is resizable
-        if (resizable && Input.GetAxis("Mouse ScrollWheel") > 0f && transform.localScale.x < 2f)
+        if (resizable && MMKClusterInputManager.GetButtonDown("Btn_ScaleUp") && transform.localScale.x < 2f)
         {
             transform.localScale += new Vector3(0.1f, 0.1f, 0.1f);
             transform.localPosition += new Vector3(0, 0, 0.05f);
         }
 
-        if (resizable && Input.GetAxis("Mouse ScrollWheel") < 0f && transform.localScale.x > 0.1f)
+        if (resizable && MMKClusterInputManager.GetButtonDown("Btn_ScaleDown") && transform.localScale.x > 0.1f)
         {
             transform.localScale -= new Vector3(0.1f, 0.1f, 0.1f);
             transform.localPosition -= new Vector3(0, 0, 0.05f);

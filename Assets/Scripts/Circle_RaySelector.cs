@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using cakeslice;
+using MMK.Inp;
 
 
 public class Circle_RaySelector : MonoBehaviour
@@ -65,19 +65,19 @@ public class Circle_RaySelector : MonoBehaviour
         }
 
         // If target is selected, execute its Select function
-        if (Input.GetMouseButtonDown(1) && target != null)
+        if (MMKClusterInputManager.GetButtonDown("Btn_Select") && target != null)
         {
             target.GetComponent<InteractiveBehaviour>().Select();
         }
 
         // Execute target's alternate Select function
-        if (Input.GetMouseButtonDown(2) && target != null)
+        if (MMKClusterInputManager.GetButtonDown("Btn_AltSelect") && target != null)
         {
             target.gameObject.GetComponent<InteractiveBehaviour>().AltSelect();
         }
 
         // Go back to Volume Selector on Shift or clicking when not touching anything
-        if (Input.GetKeyDown(KeyCode.LeftShift) || (Input.GetMouseButtonDown(1) || Input.GetMouseButtonDown(2)) && target == null)
+        if (MMKClusterInputManager.GetButtonDown("Btn_Return") || (MMKClusterInputManager.GetButtonDown("Btn_Select") || MMKClusterInputManager.GetButtonDown("Btn_AltSelect")) && target == null)
         {
             transform.GetComponentInParent<MeshRenderer>().enabled = true;
             transform.GetComponentInParent<Collider>().enabled = true;

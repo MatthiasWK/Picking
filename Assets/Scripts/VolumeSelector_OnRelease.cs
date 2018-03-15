@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using MMK.Inp;
 
 public class VolumeSelector_OnRelease : MonoBehaviour {
 
@@ -61,17 +62,15 @@ public class VolumeSelector_OnRelease : MonoBehaviour {
 
     private void Update()
     {
-        //transform.rotation = Quaternion.Lerp(transform.rotation, hand.transform.rotation, Time.deltaTime * 100);
-        //transform.position = Vector3.Lerp(transform.position, hand.transform.position, Time.deltaTime * 100) + offset;
-
-        if (Input.GetMouseButton(1) || Input.GetMouseButton(2))
+        // Enable Volume while either button pressed
+        if (MMKClusterInputManager.GetButton("Btn_Select") || MMKClusterInputManager.GetButton("Btn_AltSelect"))
         {
             gameObject.GetComponent<MeshRenderer>().enabled = true;
             gameObject.GetComponent<Collider>().enabled = true;
         }
 
         // If touching only one object, execute its Select function
-        if (Input.GetMouseButtonUp(1))
+        if (MMKClusterInputManager.GetButtonUp("Btn_Select"))
         {
             if (numTouching.Equals(1))
             {
@@ -84,7 +83,7 @@ public class VolumeSelector_OnRelease : MonoBehaviour {
         }
 
         // Execute object's alternate Select function
-        if (Input.GetMouseButtonUp(2))
+        if (MMKClusterInputManager.GetButtonUp("Btn_AltSelect"))
         {
             if (numTouching.Equals(1))
             {
@@ -97,13 +96,13 @@ public class VolumeSelector_OnRelease : MonoBehaviour {
         }
 
         // Control size with mouse wheel if Volume is resizable
-        if (resizable && Input.GetAxis("Mouse ScrollWheel") > 0f && transform.localScale.x < 2f)
+        if (resizable && MMKClusterInputManager.GetButtonDown("Btn_ScaleUp") && transform.localScale.x < 2f)
         {
             transform.localScale += new Vector3(0.1f, 0.1f, 0.1f);
             transform.localPosition += new Vector3(0, 0, 0.05f);
         }
 
-        if (resizable && Input.GetAxis("Mouse ScrollWheel") < 0f && transform.localScale.x > 0.1f)
+        if (resizable && MMKClusterInputManager.GetButtonDown("Btn_ScaleDown") && transform.localScale.x > 0.1f)
         {
             transform.localScale -= new Vector3(0.1f, 0.1f, 0.1f);
             transform.localPosition -= new Vector3(0, 0, 0.05f);

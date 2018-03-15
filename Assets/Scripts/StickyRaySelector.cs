@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using cakeslice;
+using MMK.Inp;
 
 
 public class StickyRaySelector : MonoBehaviour
@@ -66,19 +66,19 @@ public class StickyRaySelector : MonoBehaviour
         
 
         // If target is selected, execute its Select function
-        if (Input.GetMouseButtonDown(1) && target != null)
+        if (MMKClusterInputManager.GetButtonDown("Btn_Select") && target != null)
         {
             target.GetComponent<InteractiveBehaviour>().Select();
         }
 
         // Execute target's alternate Select function
-        if (Input.GetMouseButtonDown(2) && target != null)
+        if (MMKClusterInputManager.GetButtonDown("Btn_AltSelect") && target != null)
         {
             target.gameObject.GetComponent<InteractiveBehaviour>().AltSelect();
         }
 
         // Reset selection
-        if (Input.GetKeyDown(KeyCode.LeftShift) && target != null)
+        if (MMKClusterInputManager.GetButtonDown("Btn_Return") && target != null)
         {
             target.GetComponent<InteractiveBehaviour>().Contact(false);
             target = null;

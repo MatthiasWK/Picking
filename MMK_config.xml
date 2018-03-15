@@ -9,26 +9,53 @@
     <EnableClusterInput>true</EnableClusterInput>
     <EnableMMKLogger>false</EnableMMKLogger>
     <MVRInputs>
-        <!-- Example Trackers -->
         <MiddleVRInput>
             <Name>HeadTracker</Name>
             <Type>Tracker</Type>
             <MVRName>TrackerSimulatorKeyboard0.Tracker</MVRName>
             <MVRIndex>0</MVRIndex>
         </MiddleVRInput>
-        <!-- Example Axis -->
-        <!-- Example Buttons-->
         <MiddleVRInput>
-            <Name>Btn_Primary</Name>
+            <Name>Btn_Select</Name>
             <Type>Button</Type>
-            <MVRName>Mouse</MVRName>
-            <MVRIndex>0</MVRIndex>
+            <MVRName>VRPNMouse.Buttons</MVRName>
+            <MVRIndex>2</MVRIndex>
         </MiddleVRInput>
         <MiddleVRInput>
-            <Name>Btn_Secondary</Name>
+            <Name>Btn_AltSelect</Name>
             <Type>Button</Type>
-            <MVRName>Mouse</MVRName>
+            <MVRName>VRPNMouse.Buttons</MVRName>
             <MVRIndex>1</MVRIndex>
+        </MiddleVRInput>
+		<MiddleVRInput>
+            <Name>Btn_SwitchMethod</Name>
+            <Type>Button</Type>
+            <MVRName>VRPNKeyboard.Buttons</MVRName>
+            <MVRIndex>15</MVRIndex>
+        </MiddleVRInput>
+		<MiddleVRInput>
+            <Name>Btn_SwitchSelect</Name>
+            <Type>Button</Type>
+            <MVRName>VRPNKeyboard.Buttons</MVRName>
+            <MVRIndex>42</MVRIndex>
+        </MiddleVRInput>
+		<MiddleVRInput>
+            <Name>Btn_Return</Name>
+            <Type>Button</Type>
+            <MVRName>VRPNKeyboard.Buttons</MVRName>
+            <MVRIndex>29</MVRIndex>
+        </MiddleVRInput>
+		<MiddleVRInput>
+            <Name>Btn_ScaleUp</Name>
+            <Type>Button</Type>
+            <MVRName>VRPNKeyboard.Buttons</MVRName>
+            <MVRIndex>72</MVRIndex>
+        </MiddleVRInput>
+		<MiddleVRInput>
+            <Name>Btn_ScaleDown</Name>
+            <Type>Button</Type>
+            <MVRName>VRPNKeyboard.Buttons</MVRName>
+            <MVRIndex>80</MVRIndex>
         </MiddleVRInput>
 	</MVRInputs>
 </MMKConfig>
