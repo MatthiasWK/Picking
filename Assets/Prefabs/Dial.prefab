@@ -23,7 +23,6 @@ GameObject:
   - component: {fileID: 136438508298654934}
   - component: {fileID: 23755635569197986}
   - component: {fileID: 114299303142178618}
-  - component: {fileID: 114821973818394294}
   - component: {fileID: 54755066897628068}
   m_Layer: 0
   m_Name: Dial
@@ -209,23 +208,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 99001819feb394240a79b29b23af8060, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  myOutline: {fileID: 0}
   original: {fileID: 0}
---- !u!114 &114821973818394294
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1069344974604076}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fbf3575480402db40813e763382412fb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  color: 1
-  eraseRenderer: 1
-  originalLayer: 0
-  originalMaterials: []
+  states:
+  - {fileID: 2100000, guid: 2cc1d05541e7b67428e2dfc8db659139, type: 2}
+  - {fileID: 2100000, guid: 1ca157511d768c743b3c715439bf6403, type: 2}
+  - {fileID: 2100000, guid: 97738dea090702b4facfcfb62ba487af, type: 2}
 --- !u!136 &136438508298654934
 CapsuleCollider:
   m_ObjectHideFlags: 1

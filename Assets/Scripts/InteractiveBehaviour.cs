@@ -1,37 +1,60 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using cakeslice;
 
 public class InteractiveBehaviour : MonoBehaviour {
-    public Outline myOutline;
     public GameObject original = null;
+    
+    public Material[] states;
+    MeshRenderer rend;
 
     private void Start()
     {
-        myOutline = GetComponent<Outline>();
+        rend = GetComponent<MeshRenderer>();
+        rend.enabled = true;
+        rend.material = states[0];
     }
 
     // Enable/disable outline
     public void Contact(bool isTouching)
     {
-        if(myOutline != null)
+        if (isTouching)
         {
-            myOutline.color = 1;
-
-            myOutline.eraseRenderer = !isTouching;
+            SetMat(1);
+        }
+        else
+        {
+            SetMat(0);
         }
     }
 
     // Enable/disable outline, and change color based on wether touching selectable object
     public void Contact(bool isTouching, bool selectable)
     {
-        if (selectable)
-            myOutline.color = 1;
-        else
-            myOutline.color = 0;
 
-        myOutline.eraseRenderer = !isTouching;
+        if (isTouching)
+        {
+            if (selectable)
+            {
+                SetMat(1);
+            }
+            else
+            {
+                SetMat(2);
+            }
+        }
+        else
+        {
+            SetMat(0);
+        }
+    }
+
+    private void SetMat(int s)
+    {
+        if (rend != null)
+        {
+            rend.material = states[s];
+        }
     }
 
     // Push button or increase lever position and dial value

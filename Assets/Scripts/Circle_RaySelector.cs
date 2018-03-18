@@ -105,8 +105,11 @@ public class Circle_RaySelector : MonoBehaviour
             resetScript.Reset();
         }
 
-        DestroyClones();
-
+        if(clones != null)
+        {
+            DestroyClones();
+        }
+        
         target = null;
     }
 }
