@@ -63,4 +63,13 @@ public class LeverController : InteractiveBehaviour
             pos = original.GetComponent<LeverController>().pos;
         }
     }
+
+    // Reset Position and rotation to prefab values and deactivate animator if clone
+    public override void ResetPos()
+    {
+        anim.enabled = false;
+
+        transform.localPosition = new Vector3(-0.07511895f, 0.07492254f, 0);
+        transform.localEulerAngles = new Vector3(0, 0, 90.091f);
+    }
 }

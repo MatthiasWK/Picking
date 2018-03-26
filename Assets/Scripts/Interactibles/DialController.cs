@@ -16,33 +16,33 @@ public class DialController : InteractiveBehaviour {
             dialName = transform.parent.name;
         }
 
-        value = -1;
+        value = 0;
     }
 
     // Rotate Dial right
     protected override void OnSelect()
     {
         transform.Rotate(rot);
+
+        value = (value + 1) % 10;
+
+        if (tag == "Interactive")
+        {
+            print(dialName + " changed to " + value);
+        }
     }
 
     // Rotate Dial left
     protected override void OnAltSelect()
     {
         transform.Rotate(-rot);
-    }
 
-    private void Update()
-    {
-        if (transform.hasChanged)
+        value = (value - 1) % 10;
+        if (value < 0) value = 9;
+
+        if (tag == "Interactive")
         {
-            value = (value + 1) % 10;
-
-            if(tag == "Interactive")
-            {
-                print(dialName + " changed to " + value);
-            }
-
-            transform.hasChanged = false;
+            print(dialName + " changed to " + value);
         }
     }
 

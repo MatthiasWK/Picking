@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="Ray_Base">
+    <Position X="2.75" Y="0.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACAAAAAAIAAAAAAAAAABAAAIAAAACAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Methods\Ray_Base.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Circle_RaySelector_new">
+    <Position X="2.75" Y="9.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BAQAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAACAA=</HashCode>
+      <FileName>Assets\Scripts\Methods\Circle_RaySelector_new.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="RaySelector_Click_new">
+    <Position X="4" Y="4" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAACAA=</HashCode>
+      <FileName>Assets\Scripts\Methods\RaySelector_Click_new.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="RaySelector_OnRelease_new">
+    <Position X="0.5" Y="4" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAA=</HashCode>
+      <FileName>Assets\Scripts\Methods\RaySelector_OnRelease_new.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Hybrid_RaySelector_new">
+    <Position X="2.75" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQgAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAEAAACAA=</HashCode>
+      <FileName>Assets\Scripts\Methods\Hybrid_RaySelector_new.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="StickyRaySelector_new">
+    <Position X="5" Y="6.5" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAAAAAAAAAAAAEAAAAAAAAAAAIAAAAAAAACAA=</HashCode>
+      <FileName>Assets\Scripts\Methods\StickyRaySelector_new.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

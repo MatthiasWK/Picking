@@ -90,4 +90,10 @@ public class InteractiveBehaviour : MonoBehaviour {
     {
 
     }
+
+    // Only for levers to reset their position
+    public virtual void ResetPos()
+    {
+
+    }
 }
