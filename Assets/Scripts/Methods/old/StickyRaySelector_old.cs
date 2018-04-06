@@ -4,7 +4,7 @@ using UnityEngine;
 using MMK.Inp;
 
 
-public class StickyRaySelector : MonoBehaviour
+public class StickyRaySelector_old : MonoBehaviour
 {
 
     //private GameObject[] pickUps;

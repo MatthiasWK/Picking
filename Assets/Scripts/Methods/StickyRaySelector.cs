@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using MMK.Inp;
 
-public class StickyRaySelector_new : RaySelector_Click_new
+public class StickyRaySelector : RaySelector_Click
 {
     private LineRenderer stickyRay;
 

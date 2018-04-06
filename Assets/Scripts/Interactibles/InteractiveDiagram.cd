@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="InteractiveBehaviour">
+    <Position X="0.5" Y="0.5" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAABAgAACAAAAAACCAAAAEAAAABAAAECAAAQAAAIAA=</HashCode>
+      <FileName>Assets\Scripts\Interactibles\InteractiveBehaviour.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ButtonController">
+    <Position X="3" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAgAAAAAAAQAAAAAAAAAAAAAAAAAQQAAAAAAIEA=</HashCode>
+      <FileName>Assets\Scripts\Interactibles\ButtonController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DialController">
+    <Position X="4.75" Y="0.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAgAAAAAAAAAAAAAAAACAAAIACAAAAAAAAAAIEA=</HashCode>
+      <FileName>Assets\Scripts\Interactibles\DialController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LeverController">
+    <Position X="6.5" Y="1" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAgAAAAAAAAAAAAAAIAAAAAJAAAAAQAAAQAAIEA=</HashCode>
+      <FileName>Assets\Scripts\Interactibles\LeverController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

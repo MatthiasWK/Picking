@@ -1,23 +1,36 @@
-﻿using UnityEngine;
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
 using MMK.Inp;
 
-public class RaySelector_Click_new : Ray_Base
+public class RaySelector_Click_old : MonoBehaviour
 {
-    public bool sticky = false;
+
+    //private GameObject[] pickUps;
+    private OutlineReset resetScript;
+    private GameObject target = null;
+
+    //public GameObject hand;
+
+    private void Start()
+    {
+        //pickUps = GameObject.FindGameObjectsWithTag("Interactive");
+        //resetScript = GameObject.Find("Buttons").GetComponent<ButtonReset>();
+        resetScript = transform.parent.GetComponent<OutlineReset>();
+    }
 
     private void OnEnable()
     {
         transform.Find("RayVisual").gameObject.SetActive(true);
-        type = "Interactive";
-        dir = Vector3.forward;
     }
 
     // Update is called once per frame
-    public virtual void Update()
-    {
+    void Update () {
+        //transform.rotation = Quaternion.Lerp(transform.rotation, hand.transform.rotation, Time.deltaTime * 100);
+        //transform.position = Vector3.Lerp(transform.position, hand.transform.position, Time.deltaTime * 100);
 
         // Debug Raycast
-        Vector3 forward = transform.TransformDirection(dir) * 50;
+        Vector3 forward = transform.TransformDirection(Vector3.forward) *50;
         //Debug.DrawRay(transform.position, forward, Color.green);
 
         RaycastHit hit = new RaycastHit(); ;
@@ -25,7 +38,7 @@ public class RaySelector_Click_new : Ray_Base
         if (Physics.Raycast(myRay, out hit))
         {
             //print(hit);
-            if (hit.collider.gameObject.CompareTag(type)) // Check if object is Interactable
+            if (hit.collider.gameObject.CompareTag("Interactive")) // Check if object is Interactable
             {
                 if (target != hit.collider.gameObject) // Check if already touching hit object
                 {
@@ -38,13 +51,13 @@ public class RaySelector_Click_new : Ray_Base
                     target.GetComponent<InteractiveBehaviour>().Contact(true); // Activate outline
                 }
             }
-            else if (!sticky && target != null) // If touching something else, reset previous target
+            else if (target != null) // If touching something else, reset previous target
             {
                 target.GetComponent<InteractiveBehaviour>().Contact(false);
                 target = null;
             }
         }
-        else if (!sticky && target != null) // If not touching anything, reset previous target
+        else if (target != null) // If not touching anything, reset previous target
         {
             target.GetComponent<InteractiveBehaviour>().Contact(false);
             target = null;
@@ -62,5 +75,29 @@ public class RaySelector_Click_new : Ray_Base
             target.gameObject.GetComponent<InteractiveBehaviour>().AltSelect();
         }
 
+    }
+
+    // Reset on disable
+    private void OnDisable()
+    {
+
+        if (resetScript != null)
+        {
+            resetScript.Reset();
+        }
+
+        //if (pickUps != null)
+        //{
+        //    foreach (GameObject obj in pickUps)
+        //    {
+        //        if (obj != null)
+        //        {
+        //            obj.GetComponent<InteractiveBehaviour>().Contact(false);
+        //        }
+        //    }
+        //}
+
+
+        target = null;
     }
 }

@@ -4,7 +4,7 @@ using UnityEngine;
 using MMK.Inp;
 
 
-public class Hybrid_RaySelector : MonoBehaviour
+public class Hybrid_RaySelector_old : MonoBehaviour
 {
     
     private OutlineReset resetScript;

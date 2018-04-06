@@ -3,42 +3,43 @@ using System.Collections.Generic;
 using UnityEngine;
 using MMK.Inp;
 
-public class RaySelector_Click : MonoBehaviour
+
+public class Circle_RaySelector_old : MonoBehaviour
 {
 
-    //private GameObject[] pickUps;
     private OutlineReset resetScript;
     private GameObject target = null;
+    private GameObject[] clones;
 
-    //public GameObject hand;
+    public GameObject container;
+    public GameObject hand;
 
     private void Start()
     {
-        //pickUps = GameObject.FindGameObjectsWithTag("Interactive");
-        //resetScript = GameObject.Find("Buttons").GetComponent<ButtonReset>();
-        resetScript = transform.parent.GetComponent<OutlineReset>();
+        resetScript = transform.parent.parent.GetComponent<OutlineReset>();
+        transform.position = container.transform.position;
     }
 
     private void OnEnable()
     {
-        transform.Find("RayVisual").gameObject.SetActive(true);
+        clones = GameObject.FindGameObjectsWithTag("Clone");
     }
 
     // Update is called once per frame
-    void Update () {
-        //transform.rotation = Quaternion.Lerp(transform.rotation, hand.transform.rotation, Time.deltaTime * 100);
-        //transform.position = Vector3.Lerp(transform.position, hand.transform.position, Time.deltaTime * 100);
+    void Update()
+    {
+        // Direction of ray depends on z axis of hand
+        transform.eulerAngles = new Vector3(container.transform.eulerAngles.x, container.transform.eulerAngles.y, hand.transform.eulerAngles.z);
 
-        // Debug Raycast
-        Vector3 forward = transform.TransformDirection(Vector3.forward) *50;
-        //Debug.DrawRay(transform.position, forward, Color.green);
+        Vector3 forward = transform.TransformDirection(Vector3.up) * 50;
+        Debug.DrawRay(transform.position, forward, Color.green);
 
         RaycastHit hit = new RaycastHit(); ;
         Ray myRay = new Ray(transform.position, forward);
         if (Physics.Raycast(myRay, out hit))
         {
             //print(hit);
-            if (hit.collider.gameObject.CompareTag("Interactive")) // Check if object is Interactable
+            if (hit.collider.gameObject.CompareTag("Clone")) // Check if object is a Clone of an Interactable
             {
                 if (target != hit.collider.gameObject) // Check if already touching hit object
                 {
@@ -75,6 +76,24 @@ public class RaySelector_Click : MonoBehaviour
             target.gameObject.GetComponent<InteractiveBehaviour>().AltSelect();
         }
 
+        // Go back to Volume Selector on Shift or clicking when not touching anything
+        if (MMKClusterInputManager.GetButtonDown("Btn_Return") || (MMKClusterInputManager.GetButtonDown("Btn_Select") || MMKClusterInputManager.GetButtonDown("Btn_AltSelect")) && target == null)
+        {
+            transform.GetComponentInParent<MeshRenderer>().enabled = true;
+            transform.GetComponentInParent<Collider>().enabled = true;
+            DestroyClones();
+            gameObject.SetActive(false);
+        }
+
+    }
+
+    // Destroy all clones
+    private void DestroyClones()
+    {
+        foreach (GameObject clone in clones)
+        {
+            Destroy(clone.transform.parent.gameObject);
+        }
     }
 
     // Reset on disable
@@ -86,18 +105,11 @@ public class RaySelector_Click : MonoBehaviour
             resetScript.Reset();
         }
 
-        //if (pickUps != null)
-        //{
-        //    foreach (GameObject obj in pickUps)
-        //    {
-        //        if (obj != null)
-        //        {
-        //            obj.GetComponent<InteractiveBehaviour>().Contact(false);
-        //        }
-        //    }
-        //}
-
-
+        if(clones != null)
+        {
+            DestroyClones();
+        }
+        
         target = null;
     }
 }

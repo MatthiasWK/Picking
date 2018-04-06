@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using MMK.Inp;
 
-public class Hybrid_VolumeSelector_new : VolumeSelector_Click_new
+public class Hybrid_VolumeSelector : VolumeSelector_Click
 {
     public GameObject container;
 

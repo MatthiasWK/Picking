@@ -1,14 +1,14 @@
-﻿using System.Collections.Generic;
+﻿using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 using MMK.Inp;
 
-public class CycleSelector : MonoBehaviour
-{
+public class Hybrid_VolumeSelector_old : MonoBehaviour {
 
     private int numTouching;
     private List<Collider> touching;
-    private Collider target;
     private OutlineReset resetScript;
+    public GameObject container;
 
     public bool resizable;
 
@@ -25,7 +25,8 @@ public class CycleSelector : MonoBehaviour
         gameObject.GetComponent<Collider>().enabled = true;
 
         numTouching = 0;
-        
+
+        transform.GetChild(0).gameObject.SetActive(false);
     }
 
     private void OnTriggerEnter(Collider other)
@@ -34,7 +35,6 @@ public class CycleSelector : MonoBehaviour
         {
             touching.Add(other);
             numTouching++;
-            UpdateTarget();
         }
     }
 
@@ -43,14 +43,7 @@ public class CycleSelector : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Interactive") && enabled)
         {
-            if (other == target)
-            {
-                other.gameObject.GetComponent<InteractiveBehaviour>().Contact(true);
-            }
-            else
-            {
-                other.gameObject.GetComponent<InteractiveBehaviour>().Contact(true, numTouching.Equals(1));
-            }           
+            other.gameObject.GetComponent<InteractiveBehaviour>().Contact(true, numTouching.Equals(1));
         }
 
     }
@@ -63,33 +56,37 @@ public class CycleSelector : MonoBehaviour
             touching.Remove(other);
             numTouching--;
             other.gameObject.GetComponent<InteractiveBehaviour>().Contact(false);
-            UpdateTarget();
         }
     }
 
     private void Update()
     {
         // If touching only one object, execute its Select function
-        if (MMKClusterInputManager.GetButtonDown("Btn_Select") && target != null)
+        if (MMKClusterInputManager.GetButtonDown("Btn_Select") && numTouching.Equals(1))
         {
-            target.gameObject.GetComponent<InteractiveBehaviour>().Select();
+            touching[0].gameObject.GetComponent<InteractiveBehaviour>().Select();
         }
 
         // Execute object's alternate Select function
-        if (MMKClusterInputManager.GetButtonDown("Btn_AltSelect") && target != null)
+        if (MMKClusterInputManager.GetButtonDown("Btn_AltSelect") && numTouching.Equals(1))
         {
-            target.gameObject.GetComponent<InteractiveBehaviour>().AltSelect();
+            touching[0].gameObject.GetComponent<InteractiveBehaviour>().AltSelect();
         }
 
-        if (MMKClusterInputManager.GetButtonDown("Btn_Return") && numTouching > 1)
+        // If touching multiple objects clone them and display infront of camera, then switch to ray 
+        if ((MMKClusterInputManager.GetButtonDown("Btn_Select") || MMKClusterInputManager.GetButtonDown("Btn_AltSelect")) && numTouching > 1)
         {
-            int i = touching.IndexOf(target);
-            int next = (i + 1) % numTouching;
-            target = touching[next];
+            Clone();
+
+            gameObject.GetComponent<MeshRenderer>().enabled = false;
+            gameObject.GetComponent<Collider>().enabled = false;
+            OnDisable();
+
+            transform.GetChild(0).gameObject.SetActive(true);
         }
 
-            // Control size with mouse wheel if Volume is resizable
-            if (resizable && MMKClusterInputManager.GetButtonDown("Btn_ScaleUp") && transform.localScale.x < 2f && GetComponent<MeshRenderer>().enabled)
+        // Control size with mouse wheel if Volume is resizable
+        if (resizable && MMKClusterInputManager.GetButtonDown("Btn_ScaleUp") && transform.localScale.x < 2f && GetComponent<MeshRenderer>().enabled)
         {
             transform.localScale += new Vector3(0.1f, 0.1f, 0.1f);
             transform.localPosition += new Vector3(0, 0, 0.05f);
@@ -103,14 +100,29 @@ public class CycleSelector : MonoBehaviour
 
     }
 
-    private void UpdateTarget()
+    private void Clone()
     {
-        if(numTouching > 0)
+        float offsInterval = 0.22f;
+        float offset = touching.Count * -0.5f * offsInterval;
+        Vector3 clonePos = new Vector3(0, 0, 0);
+        Quaternion cloneRot = new Quaternion();
+
+        foreach(Collider orig in touching)
         {
-            if(target == null || (target != null && !touching.Contains(target)))
+            Transform cloneParent = Instantiate(orig.transform.parent, container.transform);
+            cloneParent.localPosition = clonePos + new Vector3(offset, 0, 0);
+            cloneParent.rotation = cloneRot;
+
+            foreach(Transform child in cloneParent)
             {
-                target = touching[0];
+                if (child.tag == "Interactive")
+                {
+                    child.tag = "Clone";
+                    child.GetComponent<InteractiveBehaviour>().original = orig.gameObject;
+                    child.GetComponent<InteractiveBehaviour>().Contact(false);
+                }
             }
+            offset += offsInterval;
         }
     }
 
@@ -127,7 +139,6 @@ public class CycleSelector : MonoBehaviour
             touching.Clear();
         }
 
-        target = null;
         numTouching = 0;
 
         if (resizable)

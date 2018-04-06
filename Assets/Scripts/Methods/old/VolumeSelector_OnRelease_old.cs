@@ -3,15 +3,15 @@ using System.Collections.Generic;
 using UnityEngine;
 using MMK.Inp;
 
-public class VolumeSelector_Click : MonoBehaviour {
+public class VolumeSelector_OnRelease_old : MonoBehaviour {
+
     private int numTouching;
 
     private List<Collider> touching;
     private OutlineReset resetScript;
-
-    public bool resizable;
     //private Vector3 offset;
 
+    public bool resizable;
     //public GameObject hand;
     private void Start()
     {
@@ -23,21 +23,22 @@ public class VolumeSelector_Click : MonoBehaviour {
 
     private void OnEnable()
     {
-        gameObject.GetComponent<MeshRenderer>().enabled = true;
-        gameObject.GetComponent<Collider>().enabled = true;
+        gameObject.GetComponent<MeshRenderer>().enabled = false;
+        gameObject.GetComponent<Collider>().enabled = false;
 
         numTouching = 0;
     }
 
+    // Increase number of touching objects on enter
     private void OnTriggerEnter(Collider other)
-    {       
-         if (other.gameObject.CompareTag("Interactive") && enabled)
+    {
+        if (other.gameObject.CompareTag("Interactive") && enabled)
         {
             touching.Add(other);
             numTouching++;
-        }             
+        }
     }
-       
+
     // Update touching objects
     private void OnTriggerStay(Collider other)
     {
@@ -45,7 +46,7 @@ public class VolumeSelector_Click : MonoBehaviour {
         {
             other.gameObject.GetComponent<InteractiveBehaviour>().Contact(true, numTouching.Equals(1));
         }
-
+       
     }
 
     // Reset objects on exit
@@ -61,16 +62,37 @@ public class VolumeSelector_Click : MonoBehaviour {
 
     private void Update()
     {
-        // If touching only one object, execute its Select function
-        if (MMKClusterInputManager.GetButtonDown("Btn_Select") && numTouching.Equals(1))
+        // Enable Volume while either button pressed
+        if (MMKClusterInputManager.GetButton("Btn_Select") || MMKClusterInputManager.GetButton("Btn_AltSelect"))
         {
-            touching[0].gameObject.GetComponent<InteractiveBehaviour>().Select();
+            gameObject.GetComponent<MeshRenderer>().enabled = true;
+            gameObject.GetComponent<Collider>().enabled = true;
+        }
+
+        // If touching only one object, execute its Select function
+        if (MMKClusterInputManager.GetButtonUp("Btn_Select"))
+        {
+            if (numTouching.Equals(1))
+            {
+                touching[0].gameObject.GetComponent<InteractiveBehaviour>().Select();
+            }
+
+            gameObject.GetComponent<MeshRenderer>().enabled = false;
+            gameObject.GetComponent<Collider>().enabled = false;
+            OnDisable();
         }
 
         // Execute object's alternate Select function
-        if (MMKClusterInputManager.GetButtonDown("Btn_AltSelect") && numTouching.Equals(1))
+        if (MMKClusterInputManager.GetButtonUp("Btn_AltSelect"))
         {
-            touching[0].gameObject.GetComponent<InteractiveBehaviour>().AltSelect();
+            if (numTouching.Equals(1))
+            {
+                touching[0].gameObject.GetComponent<InteractiveBehaviour>().AltSelect();
+            }
+
+            gameObject.GetComponent<MeshRenderer>().enabled = false;
+            gameObject.GetComponent<Collider>().enabled = false;
+            OnDisable();
         }
 
         // Control size with mouse wheel if Volume is resizable
@@ -85,13 +107,12 @@ public class VolumeSelector_Click : MonoBehaviour {
             transform.localScale -= new Vector3(0.1f, 0.1f, 0.1f);
             transform.localPosition -= new Vector3(0, 0, 0.05f);
         }
-
     }
 
     // Reset on disable
-    public void OnDisable()
+    private void OnDisable()
     {
-        if(resetScript != null)
+        if (resetScript != null)
         {
             resetScript.Reset();
         }
@@ -108,6 +129,5 @@ public class VolumeSelector_Click : MonoBehaviour {
             transform.localScale = Vector3.one;
             transform.localPosition = new Vector3(0, 0, 0.5f);
         }
-
     }
 }

@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using MMK.Inp;
 
-public class CycleSelector_new : VolumeSelector_Click_new
+public class CycleSelector : VolumeSelector_Click
 {
     private Collider target;
 

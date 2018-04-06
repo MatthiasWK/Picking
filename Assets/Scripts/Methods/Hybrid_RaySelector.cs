@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using MMK.Inp;
 
-public class Hybrid_RaySelector_new : RaySelector_Click_new
+public class Hybrid_RaySelector : RaySelector_Click
 {
     public GameObject[] clones;
 

@@ -2,7 +2,7 @@
 using UnityEditor;
 using MMK.Inp;
 
-public class Circle_VolumeSelector_new : VolumeSelector_Click_new
+public class Circle_VolumeSelector : VolumeSelector_Click
 {
     public GameObject container;
 

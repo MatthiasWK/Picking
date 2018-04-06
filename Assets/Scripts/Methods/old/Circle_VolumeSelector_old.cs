@@ -3,7 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using MMK.Inp;
 
-public class Hybrid_VolumeSelector : MonoBehaviour {
+public class Circle_VolumeSelector_old : MonoBehaviour
+{
 
     private int numTouching;
     private List<Collider> touching;
@@ -73,10 +74,10 @@ public class Hybrid_VolumeSelector : MonoBehaviour {
             touching[0].gameObject.GetComponent<InteractiveBehaviour>().AltSelect();
         }
 
-        // If touching multiple objects clone them and display infront of camera, then switch to ray 
+        // If touching multiple objects clone them and display around hand then switch to ray
         if ((MMKClusterInputManager.GetButtonDown("Btn_Select") || MMKClusterInputManager.GetButtonDown("Btn_AltSelect")) && numTouching > 1)
         {
-            Clone();
+            CloneCircle();
 
             gameObject.GetComponent<MeshRenderer>().enabled = false;
             gameObject.GetComponent<Collider>().enabled = false;
@@ -100,20 +101,20 @@ public class Hybrid_VolumeSelector : MonoBehaviour {
 
     }
 
-    private void Clone()
+    private void CloneCircle()
     {
-        float offsInterval = 0.22f;
-        float offset = touching.Count * -0.5f * offsInterval;
-        Vector3 clonePos = new Vector3(0, 0, 0);
-        Quaternion cloneRot = new Quaternion();
-
-        foreach(Collider orig in touching)
+        float radius = 0.5f;
+        int i = 0;
+        foreach (Collider orig in touching)
         {
+            int a = 360 / numTouching * i;
+            i++;
+            Vector3 pos = RandomCircle(radius, a);
             Transform cloneParent = Instantiate(orig.transform.parent, container.transform);
-            cloneParent.localPosition = clonePos + new Vector3(offset, 0, 0);
-            cloneParent.rotation = cloneRot;
+            cloneParent.localPosition = pos;
+            cloneParent.rotation = cloneParent.parent.rotation;
 
-            foreach(Transform child in cloneParent)
+            foreach (Transform child in cloneParent)
             {
                 if (child.tag == "Interactive")
                 {
@@ -122,8 +123,18 @@ public class Hybrid_VolumeSelector : MonoBehaviour {
                     child.GetComponent<InteractiveBehaviour>().Contact(false);
                 }
             }
-            offset += offsInterval;
+
         }
+    }
+
+    Vector3 RandomCircle(float radius, int a)
+    {
+        float ang = a;
+        Vector3 pos;
+        pos.x = radius * Mathf.Sin(ang * Mathf.Deg2Rad);
+        pos.y = radius * Mathf.Cos(ang * Mathf.Deg2Rad);
+        pos.z = 0;
+        return pos;
     }
 
     // Reset on disable

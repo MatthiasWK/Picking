@@ -1,15 +1,14 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using UnityEngine;
 using MMK.Inp;
 
-public class Circle_VolumeSelector : MonoBehaviour
+public class CycleSelector_old : MonoBehaviour
 {
 
     private int numTouching;
     private List<Collider> touching;
+    private Collider target;
     private OutlineReset resetScript;
-    public GameObject container;
 
     public bool resizable;
 
@@ -26,8 +25,7 @@ public class Circle_VolumeSelector : MonoBehaviour
         gameObject.GetComponent<Collider>().enabled = true;
 
         numTouching = 0;
-
-        transform.GetChild(0).gameObject.SetActive(false);
+        
     }
 
     private void OnTriggerEnter(Collider other)
@@ -36,6 +34,7 @@ public class Circle_VolumeSelector : MonoBehaviour
         {
             touching.Add(other);
             numTouching++;
+            UpdateTarget();
         }
     }
 
@@ -44,7 +43,14 @@ public class Circle_VolumeSelector : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Interactive") && enabled)
         {
-            other.gameObject.GetComponent<InteractiveBehaviour>().Contact(true, numTouching.Equals(1));
+            if (other == target)
+            {
+                other.gameObject.GetComponent<InteractiveBehaviour>().Contact(true);
+            }
+            else
+            {
+                other.gameObject.GetComponent<InteractiveBehaviour>().Contact(true, numTouching.Equals(1));
+            }           
         }
 
     }
@@ -57,37 +63,33 @@ public class Circle_VolumeSelector : MonoBehaviour
             touching.Remove(other);
             numTouching--;
             other.gameObject.GetComponent<InteractiveBehaviour>().Contact(false);
+            UpdateTarget();
         }
     }
 
     private void Update()
     {
         // If touching only one object, execute its Select function
-        if (MMKClusterInputManager.GetButtonDown("Btn_Select") && numTouching.Equals(1))
+        if (MMKClusterInputManager.GetButtonDown("Btn_Select") && target != null)
         {
-            touching[0].gameObject.GetComponent<InteractiveBehaviour>().Select();
+            target.gameObject.GetComponent<InteractiveBehaviour>().Select();
         }
 
         // Execute object's alternate Select function
-        if (MMKClusterInputManager.GetButtonDown("Btn_AltSelect") && numTouching.Equals(1))
+        if (MMKClusterInputManager.GetButtonDown("Btn_AltSelect") && target != null)
         {
-            touching[0].gameObject.GetComponent<InteractiveBehaviour>().AltSelect();
+            target.gameObject.GetComponent<InteractiveBehaviour>().AltSelect();
         }
 
-        // If touching multiple objects clone them and display around hand then switch to ray
-        if ((MMKClusterInputManager.GetButtonDown("Btn_Select") || MMKClusterInputManager.GetButtonDown("Btn_AltSelect")) && numTouching > 1)
+        if (MMKClusterInputManager.GetButtonDown("Btn_Return") && numTouching > 1)
         {
-            CloneCircle();
-
-            gameObject.GetComponent<MeshRenderer>().enabled = false;
-            gameObject.GetComponent<Collider>().enabled = false;
-            OnDisable();
-
-            transform.GetChild(0).gameObject.SetActive(true);
+            int i = touching.IndexOf(target);
+            int next = (i + 1) % numTouching;
+            target = touching[next];
         }
 
-        // Control size with mouse wheel if Volume is resizable
-        if (resizable && MMKClusterInputManager.GetButtonDown("Btn_ScaleUp") && transform.localScale.x < 2f && GetComponent<MeshRenderer>().enabled)
+            // Control size with mouse wheel if Volume is resizable
+            if (resizable && MMKClusterInputManager.GetButtonDown("Btn_ScaleUp") && transform.localScale.x < 2f && GetComponent<MeshRenderer>().enabled)
         {
             transform.localScale += new Vector3(0.1f, 0.1f, 0.1f);
             transform.localPosition += new Vector3(0, 0, 0.05f);
@@ -101,40 +103,15 @@ public class Circle_VolumeSelector : MonoBehaviour
 
     }
 
-    private void CloneCircle()
+    private void UpdateTarget()
     {
-        float radius = 0.5f;
-        int i = 0;
-        foreach (Collider orig in touching)
+        if(numTouching > 0)
         {
-            int a = 360 / numTouching * i;
-            i++;
-            Vector3 pos = RandomCircle(radius, a);
-            Transform cloneParent = Instantiate(orig.transform.parent, container.transform);
-            cloneParent.localPosition = pos;
-            cloneParent.rotation = cloneParent.parent.rotation;
-
-            foreach (Transform child in cloneParent)
+            if(target == null || (target != null && !touching.Contains(target)))
             {
-                if (child.tag == "Interactive")
-                {
-                    child.tag = "Clone";
-                    child.GetComponent<InteractiveBehaviour>().original = orig.gameObject;
-                    child.GetComponent<InteractiveBehaviour>().Contact(false);
-                }
+                target = touching[0];
             }
-
         }
-    }
-
-    Vector3 RandomCircle(float radius, int a)
-    {
-        float ang = a;
-        Vector3 pos;
-        pos.x = radius * Mathf.Sin(ang * Mathf.Deg2Rad);
-        pos.y = radius * Mathf.Cos(ang * Mathf.Deg2Rad);
-        pos.z = 0;
-        return pos;
     }
 
     // Reset on disable
@@ -150,6 +127,7 @@ public class Circle_VolumeSelector : MonoBehaviour
             touching.Clear();
         }
 
+        target = null;
         numTouching = 0;
 
         if (resizable)

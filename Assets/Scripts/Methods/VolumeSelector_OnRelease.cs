@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using MMK.Inp;
 
-public class VolumeSelector_OnRelease_new : Volume_Base
+public class VolumeSelector_OnRelease : Volume_Base
 {
     public virtual void OnEnable()
     {

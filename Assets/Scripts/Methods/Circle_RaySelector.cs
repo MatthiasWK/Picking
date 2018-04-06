@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using MMK.Inp;
 
-public class Circle_RaySelector_new : Hybrid_RaySelector_new
+public class Circle_RaySelector : Hybrid_RaySelector
 {
     public GameObject container;
     public GameObject hand;
