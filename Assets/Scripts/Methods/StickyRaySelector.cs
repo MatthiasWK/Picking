@@ -19,20 +19,20 @@ public class StickyRaySelector : RaySelector_Click
     {
         base.Update();
 
+        // Once Ray hits an object draw a seperate sticky ray that stays connected to target 
+        if (target != null)
+        {
+            stickyRay.enabled = true;
+            stickyRay.SetPosition(0, transform.position);
+            stickyRay.SetPosition(1, target.transform.position);
+        }
+
         // Reset selection
         if (MMKClusterInputManager.GetButtonDown("Btn_Return") && target != null)
         {
             target.GetComponent<InteractiveBehaviour>().Contact(false);
             target = null;
             stickyRay.enabled = false;
-        }
-
-        // Once Ray hits an object draw a seperate sticky ray that stays connected to target 
-        if (target != null)
-        {
-            stickyRay.enabled = true;
-            GetComponent<LineRenderer>().SetPosition(0, transform.position);
-            GetComponent<LineRenderer>().SetPosition(1, target.transform.position);
         }
     }
 
