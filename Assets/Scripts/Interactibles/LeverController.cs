@@ -71,5 +71,7 @@ public class LeverController : InteractiveBehaviour
 
         transform.localPosition = new Vector3(-0.07511895f, 0.07492254f, 0);
         transform.localEulerAngles = new Vector3(0, 0, 90.091f);
+        transform.localScale *= 0.5f;
     }
+
 }

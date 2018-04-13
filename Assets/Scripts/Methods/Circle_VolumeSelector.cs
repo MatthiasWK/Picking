@@ -50,6 +50,7 @@ public class Circle_VolumeSelector : VolumeSelector_Click
                     child.tag = "Clone";
                     child.GetComponent<InteractiveBehaviour>().original = orig.gameObject;
                     child.GetComponent<InteractiveBehaviour>().Contact(false);
+                    child.GetComponent<InteractiveBehaviour>().ResetPos();
                 }
             }
 
