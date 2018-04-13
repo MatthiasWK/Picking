@@ -26,7 +26,7 @@ public class MethodSwitcher : MonoBehaviour {
 
         methods = GameObject.FindGameObjectsWithTag("PickingMethod");
         numMethods = methods.Length;
-        print (numMethods);
+        //print (numMethods);
         //deactivate all methods
         foreach (GameObject m in methods)
         {

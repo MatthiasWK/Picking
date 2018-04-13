@@ -58,6 +58,7 @@ public class CycleSelector : VolumeSelector_Click
             target.gameObject.GetComponent<InteractiveBehaviour>().AltSelect();
         }
 
+        // change the current target to the next object in the list
         if (MMKClusterInputManager.GetButtonDown("Btn_Return") && touching.Count > 1)
         {
             int i = touching.IndexOf(target);

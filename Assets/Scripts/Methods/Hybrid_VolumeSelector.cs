@@ -7,9 +7,6 @@ public class Hybrid_VolumeSelector : VolumeSelector_Click
 
     public override void OnEnable()
     {
-        //gameObject.GetComponent<MeshRenderer>().enabled = true;
-        //gameObject.GetComponent<Collider>().enabled = true;
-
         base.OnEnable();
         transform.GetChild(0).gameObject.SetActive(false);
     }
@@ -32,6 +29,7 @@ public class Hybrid_VolumeSelector : VolumeSelector_Click
 
     }
 
+    // Creates a clone of each object in touching and arranges the clones in a line
     private void Clone()
     {
         float offsInterval = 0.22f;
