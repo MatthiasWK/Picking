@@ -3,15 +3,14 @@ using MMK.Inp;
 
 public class Circle_RaySelector : Hybrid_RaySelector
 {
-    public GameObject container;
     public GameObject hand;
 
     private void OnEnable()
     {
-        clones = GameObject.FindGameObjectsWithTag("Clone");
         transform.position = container.transform.position;
         type = "Clone";
         dir = Vector3.up;
+        sticky = false;
     }
 
     public override void Update()

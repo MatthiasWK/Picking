@@ -32,11 +32,12 @@ public class Hybrid_VolumeSelector : VolumeSelector_Click
     // Creates a clone of each object in touching and arranges the clones in a line
     private void Clone()
     {
-        float offsInterval = 0.22f;
-        float offset = touching.Count * -0.5f * offsInterval;
+        float offsInterval = 0.3f;
+        float offset = Mathf.Min(touching.Count, 10) * -0.5f * offsInterval;
         Vector3 clonePos = new Vector3(0, 0, 0);
         Quaternion cloneRot = new Quaternion();
 
+        int i = 0;
         foreach (Collider orig in touching)
         {
             Transform cloneParent = Instantiate(orig.transform.parent, container.transform);
@@ -53,7 +54,19 @@ public class Hybrid_VolumeSelector : VolumeSelector_Click
                     child.GetComponent<InteractiveBehaviour>().ResetPos();
                 }
             }
-            offset += offsInterval;
+
+            if(i < 9)
+            {
+                offset += offsInterval;
+                i++;
+            }
+            else
+            {
+                offset = Mathf.Min(touching.Count, 10) * -0.5f * offsInterval;
+                clonePos += new Vector3(0, -0.3f, 0);
+                i = 0;
+            }
+           
         }
     }
 }
