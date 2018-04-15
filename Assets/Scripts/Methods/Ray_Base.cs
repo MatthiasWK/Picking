@@ -18,7 +18,7 @@ public class Ray_Base : MonoBehaviour
     {
         // Debug Raycast
         Vector3 forward = transform.TransformDirection(dir) * 50;
-        //Debug.DrawRay(transform.position, forward, Color.green);
+        Debug.DrawRay(transform.position, forward, Color.green);
 
         RaycastHit hit = new RaycastHit(); ;
         Ray myRay = new Ray(transform.position, forward);

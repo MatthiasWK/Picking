@@ -8,35 +8,44 @@
     </TypeIdentifier>
   </Class>
   <Class Name="VolumeSelector_Click">
-    <Position X="3" Y="2.75" Width="1.75" />
+    <Position X="2.75" Y="3.25" Width="1.75" />
     <TypeIdentifier>
       <HashCode>AAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAA=</HashCode>
       <FileName>Assets\Scripts\Methods\VolumeSelector_Click.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="VolumeSelector_OnRelease">
-    <Position X="3" Y="0.75" Width="2.25" />
+    <Position X="2.75" Y="0.75" Width="2.25" />
     <TypeIdentifier>
       <HashCode>AAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAA=</HashCode>
       <FileName>Assets\Scripts\Methods\VolumeSelector_OnRelease.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Hybrid_VolumeSelector">
-    <Position X="5.75" Y="0.75" Width="2" />
+    <Position X="5.75" Y="0.5" Width="2" />
+    <InheritanceLine Type="VolumeSelector_Click" FixedToPoint="true">
+      <Path>
+        <Point X="3.625" Y="3.25" />
+        <Point X="3.625" Y="2.875" />
+        <Point X="5.375" Y="2.875" />
+        <Point X="5.375" Y="1.535" />
+        <Point X="5.75" Y="1.535" />
+      </Path>
+    </InheritanceLine>
     <TypeIdentifier>
       <HashCode>BAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACBA=</HashCode>
       <FileName>Assets\Scripts\Methods\Hybrid_VolumeSelector.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Circle_VolumeSelector">
-    <Position X="5.75" Y="3" Width="1.75" />
+    <Position X="8.5" Y="0.5" Width="1.75" />
     <TypeIdentifier>
-      <HashCode>BAQAAAAAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAACAI=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABI=</HashCode>
       <FileName>Assets\Scripts\Methods\Circle_VolumeSelector.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="CycleSelector">
-    <Position X="8.25" Y="1.25" Width="1.5" />
+    <Position X="6" Y="2.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAQAAAAAAAAAABAAIAAACAAAAAAAAIAIQAAAAAAAAAA=</HashCode>
       <FileName>Assets\Scripts\Methods\CycleSelector.cs</FileName>

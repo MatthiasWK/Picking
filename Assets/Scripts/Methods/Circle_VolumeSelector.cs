@@ -2,35 +2,10 @@
 using UnityEditor;
 using MMK.Inp;
 
-public class Circle_VolumeSelector : VolumeSelector_Click
+public class Circle_VolumeSelector : Hybrid_VolumeSelector
 {
-    public GameObject container;
 
-    public override void OnEnable()
-    {
-        base.OnEnable();
-
-        transform.GetChild(0).gameObject.SetActive(false);
-    }
-
-    public override void Update()
-    {
-        base.Update();
-
-        // If touching multiple objects clone them and display around hand then switch to ray
-        if ((MMKClusterInputManager.GetButtonDown("Btn_Select") || MMKClusterInputManager.GetButtonDown("Btn_AltSelect")) && touching.Count > 1)
-        {
-            CloneCircle();
-
-            gameObject.GetComponent<MeshRenderer>().enabled = false;
-            gameObject.GetComponent<Collider>().enabled = false;
-            OnDisable();
-
-            transform.GetChild(0).gameObject.SetActive(true);
-        }        
-    }
-
-    private void CloneCircle()
+    public override void Clone()
     {
         float radius = 0.5f;
         int i = 0;
