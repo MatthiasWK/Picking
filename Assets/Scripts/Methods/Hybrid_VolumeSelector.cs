@@ -16,7 +16,7 @@ public class Hybrid_VolumeSelector : VolumeSelector_Click
         base.Update();
 
         // If touching multiple objects clone them and display infront of camera, then switch to ray 
-        if ((/*MMKClusterInputManager.GetButtonDown("Btn_Select") || MMKClusterInputManager.GetButtonDown("Btn_AltSelect")*/Input.GetKeyDown(KeyCode.Mouse1)|| Input.GetKeyDown(KeyCode.Mouse2)) && touching.Count > 1)
+        if ((MMKClusterInputManager.GetButtonDown("Btn_Select") || MMKClusterInputManager.GetButtonDown("Btn_AltSelect")/*Input.GetKeyDown(KeyCode.Mouse1)|| Input.GetKeyDown(KeyCode.Mouse2)*/) && touching.Count > 1)
         {
             Clone();
 
